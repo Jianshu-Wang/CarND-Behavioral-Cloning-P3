@@ -56,7 +56,7 @@ The model.py file contains the code for training and saving the convolution neur
 
 My model consists of a convolution neural network with 3x3 filter sizes and depths between 16 and 64. The model includes RELU layers to introduce nonlinearity (code line 66,68,70), and the data is normalized in the model using a Keras lambda layer (code line 65).
 
-TO reduce model complexity and reduce learning time, I added two maxpool layers.
+TO reduce model complexity and reduce learning time, I added two max poolings.
 
 #### 2. Attempts to reduce overfitting in the model
 
@@ -79,8 +79,6 @@ I used the pictures which were captured by the central camera, and revocer by us
 In order to make a good training data, I carefully drive the car in the train model, I drove a couple of cycles to make sure the data is enough.
 
 When using the photos of the left and right cameras to train the steering angle, I will give a certain correction factor to it.
-
-Another method that I used is flip the image. This method doubles the training set, and also this gives a balance of right steer and left steer data because we mostly steer to the left in the train mode.
 
 ### Model Architecture and Training Strategy
 
@@ -121,30 +119,28 @@ Here is a visualization of the architecture (note: visualizing the architecture 
 
 #### 3. Creation of the Training Set & Training Process
 
-Due to the serious delay of the simulator, it is difficult for me to drive a car to collect data. So I used the data set provided by Udacity. To augment the data sat, I flipped images ,this could double the data set. For example, here is an image that has then been flipped:
+I carefully drove the car in the trainning mode in the simulator, to make sure it is good enough, and also in order to make enough amount of data, i drove a couple of cycles and then stop. I got my driving log file and IMG folder with 15357 images.
 
 ![alt text][image2]
 
-alt text alt text
+Another method that I used is flip the image. This method doubles the training set, and also this gives a balance of right steer and left steer data because we mostly steer to the left in the train mode.
 
-To make most use of the data set, I not only use the center images but also the left and right imags. In order to be able to use the left and right images, correction factors need to add.
+To make full use of data, I not only used the center images but also the left and right imags. In order to be able to use the left and right images, correction factors need to add.
 
-After the above process, I had 48216 number of data points. I finally randomly shuffled the data set and put 10% of the data into a validation set.
+I randomly shuffled the data set and put 10% of the data into a validation set.
 
 Before train
 
 Image cropping, cut off the top and buttom unnecessary pixel, avoid confuse the model.
 Image normalization
+
 As for train
 
 I used mean squared error for the loss function to measure how close the model predicts to the given steering angle for each image.
+
 I used Adam optimizer for optimization.
 
-Etc ....
-
-After the collection process, I had X number of data points. I then preprocessed this data by ...
+In the autonomou mode of the simulator, the car drives on the road between 2 lane lines all the time, I think it has a good enough performance.
 
 
-I finally randomly shuffled the data set and put Y% of the data into a validation set. 
 
-I used this training data for training the model. The validation set helped determine if the model was over or under fitting. The ideal number of epochs was Z as evidenced by ... I used an adam optimizer so that manually training the learning rate wasn't necessary.
