@@ -20,7 +20,7 @@ The goals / steps of this project are the following:
 
 [image1]: ./examples/placeholder.png "Model Visualization"
 [image2]: ./examples/driving_log_sample.png "driving log"
-[image3]: ./examples/placeholder_small.png "Recovery Image"
+[image3]: ./examples/mean_square_error.png "mean square error"
 [image4]: ./examples/placeholder_small.png "Recovery Image"
 [image5]: ./examples/placeholder_small.png "Recovery Image"
 [image6]: ./examples/placeholder_small.png "Normal Image"
@@ -139,6 +139,7 @@ As for train
 I used mean squared error for the loss function to measure how close the model predicts to the given steering angle for each image.
 
 I used Adam optimizer for optimization.
+![alt text][image3]
 
 In the autonomou mode of the simulator, the car drives on the road between 2 lane lines all the time, I think it has a good enough performance.
 
