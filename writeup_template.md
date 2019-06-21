@@ -19,7 +19,7 @@ The goals / steps of this project are the following:
 [//]: # (Image References)
 
 [image1]: ./examples/placeholder.png "Model Visualization"
-[image2]: ./examples/placeholder.png "Grayscaling"
+[image2]: ./examples/driving_log_sample.png "driving log"
 [image3]: ./examples/placeholder_small.png "Recovery Image"
 [image4]: ./examples/placeholder_small.png "Recovery Image"
 [image5]: ./examples/placeholder_small.png "Recovery Image"
@@ -104,7 +104,7 @@ The final model architecture consisted of a convolution neural network with the 
 Here is a visualization of the architecture (note: visualizing the architecture is optional according to the project rubric)
 
 
-Markup : * Image cropping
+* Image cropping
 * Image normalization
 * Convolution: 5x5, filter: 24, strides: 2x2, activation: ELU
 * Convolution: 5x5, filter: 36, strides: 2x2, activation: ELU
@@ -118,11 +118,12 @@ Markup : * Image cropping
 * Fully connected: neurons: 10, activation: ELU
 * Fully connected: neurons: 1 (output)
 
-![alt text][image1]
 
 #### 3. Creation of the Training Set & Training Process
 
 Due to the serious delay of the simulator, it is difficult for me to drive a car to collect data. So I used the data set provided by Udacity. To augment the data sat, I flipped images ,this could double the data set. For example, here is an image that has then been flipped:
+
+![alt text][image2]
 
 alt text alt text
 
